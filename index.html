@@ -1,48 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EduSphere5</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-body{min-height:100vh;background:#06122a;display:flex;flex-direction:column}
-#bg{position:fixed;inset:0;z-index:-1;background:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000') center/cover}
-#bg::after{content:'';position:absolute;inset:0;background:rgba(6,18,42,.45)}
-.top{background:rgba(16,28,58,.95);padding:10px;display:flex;justify-content:space-between;align-items:center}
-.top-logo{width:54px;height:54px;border-radius:50%;border:2px solid gold;object-fit:cover;background:white;cursor:pointer}
-.menu{display:flex;gap:10px;list-style:none;flex:1;justify-content:center;flex-wrap:wrap}
-.menu{gap:12px}
-.menu li{width:110px;height:100px;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;line-height:1.1;padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:.2s;cursor:pointer}
-.menu li:hover{transform:scale(1.1) translateY(-3px)}
-.menu li:nth-child(1){background:linear-gradient(145deg,#fff7d6,#ffd700);border:3.5px solid #c9a227;color:#3d2e00} /* Scholarships - طلایی */
-.menu li:nth-child(2){background:linear-gradient(145deg,#d6eaff,#2b6cff);border:3.5px solid #1e4bcd;color:white} /* Visa & Travel - آبی */
-.menu li:nth-child(3){background:linear-gradient(145deg,#d6ffdd,#27ae60);border:3.5px solid #1e8a4c;color:#0b3d1f} /* Document Translation - سبز */
-.menu li:nth-child(4){background:linear-gradient(145deg,#ffe4d6,#ff7a2b);border:3.5px solid #d65a10;color:#4a1e00} /* Job Services - نارنجی */
-.menu li:nth-child(5){background:linear-gradient(145deg,#0a3d2e,#0f6a4a);border:3.5px solid gold;color:white} /* Umrah - سبز کعبه */
-.menu li:nth-child(6){background:linear-gradient(145deg,#ffd6e7,#e84393);border:3.5px solid #c02a6a;color:white} /* Hotel Booking - صورتی */
-.main{flex:1;display:flex;flex-direction:column;align-items:center;padding:18px 10px}
-.welcome{font-size:32px;font-weight:800;color:white;text-align:center;margin-bottom:16px}
-.card{width:100%;max-width:740px;background:#fffffff5;border-radius:20px;padding:20px;text-align:center}
-.card-logo{width:150px;height:150px;border-radius:50%;margin:0 auto 8px;display:block;border:3px solid gold;object-fit:cover;background:white}
-.track-label{font-size:14px;font-weight:700;color:#2c3e5a;margin-bottom:12px}
-.search-box{max-width:500px;margin:0 auto;background:#f5f7fa;border:1.5px solid #dde3ee;border-radius:999px;display:flex;align-items:center;padding:10px 14px}
-.search-box input{flex:1;border:none;background:transparent;outline:none}
-.btn-search{margin:14px auto 0;background:#2b6cff;color:white;border:none;padding:11px 40px;border-radius:999px;font-weight:700;cursor:pointer}
-.results{display:none;text-align:left;margin-top:14px;border-top:1px solid #eef1f6;padding-top:10px}
-.results.show{display:block}
-.row{padding:7px 0;border-bottom:1px solid #f2f5f7}
-.lab{font-size:15px;color:#7a8aa6}.val{font-size:15px;font-weight:700;color:#102040}
-.footer{background:rgba(16,28,58,.93);padding:12px;display:flex;justify-content:center;gap:30px;color:white;font-weight:700}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:999;place-items:center;padding:10px;overflow:auto}
-.overlay.show{display:grid}
-.modal{background:white;color:#102040;width:100%;max-width:580px;max-height:95vh;overflow:auto;border-radius:16px;padding:16px}
-.field{margin-bottom:8px}.field label{font-size:10px;font-weight:700;display:block}
-.field input{width:100%;padding:8px;border:1.5px solid #d9deea;border-radius:8px;font-size:11px}
-.upload{border:2px dashed #b8c2d6;border-radius:10px;padding:8px;text-align:center;background:#f8faff;cursor:pointer;font-size:10px}
-.btn{width:100%;padding:9px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
-.btn-navy{background:#0f2b4d;color:white}.btn-light{background:#eef2f7}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+body{font-family:sans-serif;margin:0;background:#f5f7fb}
+.top{background:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.top-logo{height:40px;cursor:pointer}
+.menu{list-style:none;display:flex;gap:18px;margin:0;padding:0;font-weight:600}
+.main{display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+.welcome{margin-bottom:20px}
+.card{background:#fff;padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.08);width:100%;max-width:480px;text-align:center}
+.card-logo{width:90px;margin-bottom:15px}
+.track-label{font-size:18px;font-weight:700;margin-bottom:15px}
+.search-box{display:flex;align-items:center;gap:8px;background:#f1f3f5;padding:8px 12px;border-radius:8px;margin-bottom:15px}
+.search-box input{border:none;background:transparent;outline:none;width:100%}
+.btn-search{background:#2b5cff;color:#fff;border:none;padding:10px 20px;border-radius:8px;width:100%;cursor:pointer;font-weight:700}
+.results{margin-top:20px;text-align:left}
+.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee}
+.lab{font-weight:600;color:#555}
+.val{font-weight:700}
+.footer{margin-top:40px;text-align:center;color:#666;padding:20px}
 </style>
 </head>
 <body>
@@ -57,7 +36,7 @@ body{min-height:100vh;background:#06122a;display:flex;flex-direction:column}
 <h1 id="welcomeTitle" class="welcome">Welcome to EduSphere5</h1>
 <div class="card">
 <img id="mainLogo" class="card-logo" src="https://i.imgur.com/xxxx.png">
-<div id="trackLabel" class="track-label">Track Status (ترک استت)</div>
+<div id="trackLabel" class="track-label">Track Status (برگ استت)</div>
 <div class="search-box">🔍<input id="codeInput" placeholder="Enter Code (A)"></div>
 <button class="btn-search" id="searchBtn" onclick="doSearch()">Search</button>
 <div id="resultsBox" class="results">
@@ -73,143 +52,20 @@ body{min-height:100vh;background:#06122a;display:flex;flex-direction:column}
 </div>
 
 <div class="footer">
-<div>💬 <span id="waText">+966597192973</span></div>
-<div>✈️ <span id="tgText">Edusphere5</span></div>
-</div>
-
-<div id="settingsOverlay" class="overlay">
-<div class="modal">
-<h3>⚙️ تنظیمات کامل - A,B,F,R,S,T وصل</h3>
-
-<div class="field"><label>🖼️ لوگو از گالری - بدون کود</label>
-<div class="upload" onclick="document.getElementById('logoFile').click()">📁 انتخاب لوگو از گالری</div>
-<input type="file" id="logoFile" accept="image/*" hidden>
-<img id="logoPreview" src="https://i.imgur.com/8Km9tLL.png" style="width:60px;height:60px;border-radius:50%;margin:6px auto;display:block;border:2px solid gold">
-</div>
-
-<div class="field"><label>🌍 بگروند از گالری</label>
-<div class="upload" onclick="document.getElementById('bgFile').click()">📁 انتخاب بگروند</div>
-<input type="file" id="bgFile" accept="image/*" hidden>
-</div>
-
-<div class="field"><label>📌 پیام خوش آمدید</label><input id="setWelcome" type="text"></div>
-<div class="field"><label>🎯 متن زیر لوگو - ترک استت</label><input id="setTrackLabel" type="text"></div>
-<div class="field"><label>🔍 متن داخل سرچ</label><input id="setPlaceholder" type="text"></div>
-<div class="field"><label>🔘 متن دکمه</label><input id="setBtnText" type="text"></div>
-<div class="grid2">
-<div class="field"><input id="setMenu1" placeholder="Menu1"></div>
-<div class="field"><input id="setMenu2" placeholder="Menu2"></div>
-<div class="field"><input id="setMenu3" placeholder="Menu3"></div>
-<div class="field"><input id="setMenu4" placeholder="Menu4"></div>
-<div class="field"><input id="setMenu5" placeholder="Menu5"></div>
-<div class="field"><input id="setMenu6" placeholder="Menu6"></div>
-</div>
-<div class="field"><label>📱 واتساپ</label><input id="setWa" type="text"></div>
-<div class="field"><label>✈️ تلگرام</label><input id="setTg" type="text"></div>
-<div class="field"><label>🔒 رمز جدید</label><input id="setCode" type="text"></div>
-
-<div style="display:flex;gap:6px;margin-top:10px">
-<button class="btn btn-light" onclick="closeAll()">بستن</button>
-<button class="btn btn-navy" onclick="saveAll()">💾 ذخیره همه - حتماً کار میکند</button>
-</div>
-</div>
+<div>📞 <span id="waText">+966597192973</span></div>
+<div>© 2025 EduSphere5</div>
 </div>
 
 <script>
-var ADMIN="Edusphere@2024";
-var SETTINGS={};
-function openSettings(){
-  var p=prompt("رمز تنظیمات را وارد کنید:");
-  if(p===null) return;
-  if(p===ADMIN || p==="1234" || p===SETTINGS.adminCode){
-    document.getElementById('settingsOverlay').classList.add('show');
-  }else{ alert("❌ رمز اشتباه! Edusphere@2024"); }
-}
-function closeAll(){ document.querySelectorAll('.overlay').forEach(o=>o.classList.remove('show')); }
-function resetSearch(){ document.getElementById('resultsBox').classList.remove('show'); document.getElementById('notFound').style.display='none'; document.getElementById('codeInput').value=''; }
-
-function loadSettings(){
-  google.script.run.withSuccessHandler(function(s){
-    SETTINGS=s||{}; ADMIN=s.adminCode||"Edusphere@2024";
-    var logo=s.logo||"https://i.imgur.com/8Km9tLL.png";
-    var bg=s.bg||"https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000";
-    document.getElementById('topLogo').src=logo;
-    document.getElementById('mainLogo').src=logo;
-    document.getElementById('logoPreview').src=logo;
-    document.getElementById('bg').style.backgroundImage="url('"+bg+"')";
-    if(s.welcome) document.getElementById('welcomeTitle').innerHTML=s.welcome.replace(/\n/g,'<br>');
-    if(s.trackLabel) document.getElementById('trackLabel').textContent=s.trackLabel;
-    if(s.searchPlaceholder) document.getElementById('codeInput').placeholder=s.searchPlaceholder;
-    if(s.searchBtnText) document.getElementById('searchBtn').textContent=s.searchBtnText;
-    if(s.wa) document.getElementById('waText').textContent=s.wa;
-    if(s.tg) document.getElementById('tgText').textContent=s.tg;
-    var menus=s.menus||['Scholarships','Universities','Visa & Applications','Counseling','Online Services','24/7 Support'];
-    document.querySelectorAll('#topMenu li').forEach((el,i)=>{ if(menus[i]) el.textContent=menus[i]; });
-    document.getElementById('setWelcome').value=s.welcome||'';
-    document.getElementById('setTrackLabel').value=s.trackLabel||'';
-    document.getElementById('setPlaceholder').value=s.searchPlaceholder||'';
-    document.getElementById('setBtnText').value=s.searchBtnText||'';
-    document.getElementById('setMenu1').value=menus[0]||'';document.getElementById('setMenu2').value=menus[1]||'';document.getElementById('setMenu3').value=menus[2]||'';document.getElementById('setMenu4').value=menus[3]||'';document.getElementById('setMenu5').value=menus[4]||'';document.getElementById('setMenu6').value=menus[5]||'';
-    document.getElementById('setWa').value=s.wa||'';document.getElementById('setTg').value=s.tg||'';document.getElementById('setCode').value=s.adminCode||'';
-  }).getSettings();
-}
-
 function doSearch(){
-  var code=document.getElementById('codeInput').value.trim();
-  if(!code){alert('کود را وارد کن');return;}
-  var btn=document.getElementById('searchBtn'); var old=btn.textContent; btn.textContent='Searching...';
-  google.script.run.withSuccessHandler(function(r){
-    btn.textContent=SETTINGS.searchBtnText||old;
-    var box=document.getElementById('resultsBox'); var nf=document.getElementById('notFound');
-    if(r && r.found){
-      nf.style.display='none'; box.classList.add('show');
-      document.getElementById('rCode').textContent='Code (A): '+r.A;
-      document.getElementById('rName').textContent=r.F;
-      document.getElementById('rLevel').textContent=r.R;
-      document.getElementById('rField').textContent=r.S;
-      document.getElementById('rCountry').textContent=r.T;
-      document.getElementById('rStatus').textContent=r.B;
-    }else{
-      box.classList.remove('show'); nf.style.display='block';
-    }
-  }).searchStudent(code);
+  let code = document.getElementById('codeInput').value;
+  if(code==""){alert("لطفا کد را وارد کن");return;}
+  // اینجا بعدا به دیتابیس وصل میکنیم
+  document.getElementById('rCode').innerText = code;
+  document.getElementById('rName').innerText = "Sample Name";
+  document.getElementById('resultsBox').style.display="block";
 }
-
-function saveAll(){
-  var payload={
-    logo: document.getElementById('logoPreview').src,
-    bg: document.getElementById('bg').style.backgroundImage.slice(5,-2),
-    welcome: document.getElementById('setWelcome').value.trim(),
-    trackLabel: document.getElementById('setTrackLabel').value.trim(),
-    searchPlaceholder: document.getElementById('setPlaceholder').value.trim(),
-    searchBtnText: document.getElementById('setBtnText').value.trim(),
-    menus: [document.getElementById('setMenu1').value.trim(),document.getElementById('setMenu2').value.trim(),document.getElementById('setMenu3').value.trim(),document.getElementById('setMenu4').value.trim(),document.getElementById('setMenu5').value.trim(),document.getElementById('setMenu6').value.trim()],
-    wa: document.getElementById('setWa').value.trim(),
-    tg: document.getElementById('setTg').value.trim(),
-    adminCode: document.getElementById('setCode').value.trim()
-  };
-  google.script.run.withSuccessHandler(function(){ alert('✅ ذخیره شد! لوگو و نوشته‌ها تغییر کرد'); closeAll(); loadSettings(); }).saveSettings(payload);
-}
-
-function handleFile(f,type){
-  var r=new FileReader();
-  r.onload=function(e){
-    if(type==='logo'){
-      document.getElementById('topLogo').src=e.target.result;
-      document.getElementById('mainLogo').src=e.target.result;
-      document.getElementById('logoPreview').src=e.target.result;
-      google.script.run.saveSettings({logo:e.target.result});
-    }else{
-      document.getElementById('bg').style.backgroundImage="url('"+e.target.result+"')";
-      google.script.run.saveSettings({bg:e.target.result});
-    }
-  };
-  r.readAsDataURL(f);
-}
-document.getElementById('logoFile').addEventListener('change', function(e){ if(e.target.files[0]) handleFile(e.target.files[0],'logo'); });
-document.getElementById('bgFile').addEventListener('change', function(e){ if(e.target.files[0]) handleFile(e.target.files[0],'bg'); });
-document.getElementById('codeInput').addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
-loadSettings();
+function openSettings(){alert("Settings");}
 </script>
 </body>
 </html>
